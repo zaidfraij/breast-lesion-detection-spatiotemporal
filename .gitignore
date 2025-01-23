@@ -1,0 +1,8 @@
+**/__pycache__*/
+**.pth
+models/ops/build
+models/ops/dist/MultiScaleDeformableAttention-1.0-py3.9-linux-x86_64.egg
+models/ops/MultiScaleDeformableAttention.egg-info/dependency_links.txt
+models/ops/MultiScaleDeformableAttention.egg-info/PKG-INFO
+models/ops/MultiScaleDeformableAttention.egg-info/SOURCES.txt
+models/ops/MultiScaleDeformableAttention.egg-info/top_level.txt
