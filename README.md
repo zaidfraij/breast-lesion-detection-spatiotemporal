@@ -67,7 +67,7 @@ Miccai 2022 BUV Dataset/
 
 
 ### Testing
-Download [here](https://drive.google.com/file/d/1YteSJa9OO29YW7buzJ2LD2xjl-0BaiuB/view?usp=drive_link) and put it in `./checkpoints/`.
+Download trained weights [here](https://drive.google.com/file/d/1YteSJa9OO29YW7buzJ2LD2xjl-0BaiuB/view?usp=drive_link) and put it in `./checkpoints/`.
 Then you can test it by running the following command:
 
 ```bash
