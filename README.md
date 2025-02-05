@@ -71,9 +71,8 @@ Download [here](https://drive.google.com/file/d/1YteSJa9OO29YW7buzJ2LD2xjl-0Baiu
 Then you can test it by running the following command:
 
 ```bash
-GPUS_PER_NODE=1 ./tools/run_dist_launch.sh 1 ./configs/test.sh 
+./tools/run_dist_launch.sh 1 ./configs/test.sh 
 ```
 
 ## Notes
-The code of this repository is built on https://github.com/jhl-Det/CVA-Net. We thank the authors of
-[CVA-Net](http://arxiv.org/abs/2207.00141) for their great work.
+The code of this repository is built on https://github.com/AlfredQin/STNet/tree/main.
