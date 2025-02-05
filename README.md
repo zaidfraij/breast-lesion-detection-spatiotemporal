@@ -1,28 +1,11 @@
-# STNet
-This repository is an official implementation of the paper [A Spatial-Temporal Deformable Attention based
-Framework for Breast Lesion Detection in Videos]. (MICCAI-2023)
- ![STNet](./figs/paper1755_fig_overal_arcitecture.png)
+# Breast Lesion Detection Experiments on Breast Ultra-Sound Video Datasets Using Spatial Temporal model (STNet)
+The goal of this project is to develop, evaluate, and experiment with STNET as a Spatial Temporal model for automatically identifying and localizing breast lesions in ultrasound videos.
 
-## Abstract
-Detecting breast lesion in videos is crucial for computer-
-aided diagnosis. Existing video-based breast lesion detection approaches
-typically perform temporal feature aggregation of deep backbone fea-
-tures based on the self-attention operation. We argue that such a strat-
-egy struggles to effectively perform deep feature aggregation and ig-
-nores the useful local information. To tackle these issues, we propose a
-spatial-temporal deformable attention based framework, named STNet.
-Our STNet introduces a spatial-temporal deformable attention module
-to perform local spatial-temporal feature fusion. The spatial-temporal
-deformable attention module enables deep feature aggregation in each
-stage of both encoder and decoder. To further accelerate the detection
-speed, we introduce an encoder feature shuffle strategy for multi-frame
-prediction during inference. In our encoder feature shuffle strategy, we
-share the backbone and encoder features, and shuffle encoder features
-for decoder to generate the predictions of multiple frames. The exper-
-iments on the public breast lesion ultrasound video dataset show that
-our STNet obtains a state-of-the-art detection performance, while oper-
-ating twice as fast inference speed. 
+Main Focus:
 
+    - Asses Retinanet's ability as a baseline for identifying and localizing breast lesions in ultrasound videos.
+    - Evaluate the model’s performance on publicly available datasets.
+    
 ## Usage
 ## Installation
 ### Requirements
@@ -67,33 +50,24 @@ As long as you use the database for these purposes, you can edit or process imag
 Please contact the authors of [CVA-Net](http://arxiv.org/abs/2207.00141) for getting the access to the dataset.
 ```
 code_root/
-└── miccai_buv/
+Miccai 2022 BUV Dataset/
       ├── rawframes/
-      ├── train.json
-      └── val.json
+      ├── imagenet_vid_train_15frames.json
+      ├── imagenet_vid_val.json
+      ├── annotations/
+          ├── instances_imagenet_vid_train_15frames.json
+          └── instances_imagenet_vid_val.json
 ```
 
 ### Training
 
-#### Training on single node
-
-For example, the command for training CVA-NET on 8 GPUs is as following:
-
 ```bash
-GPUS_PER_NODE=8 ./tools/run_dist_launch.sh 8 ./configs/configs.sh
+./tools/run_dist_launch.sh 1 ./configs/configs.sh
 ```
 
-#### Training on slurm cluster
-
-If you are using slurm cluster, you can simply run the following command to train on 1 node with 8 GPUs:
-
-```bash
-GPUS_PER_NODE=8 ./tools/run_dist_slurm.sh <partition> CVA-Net 8 configs/configs.sh
-```
 
 ### Testing
-We provide a trained model on the validation set. You can download it from
-[here](https://drive.google.com/file/d/1G7CaP9R_fx96-iCx5K7Py_cW-4I0bwNU/view?usp=sharing) and put it in `./checkpoints/`.
+Download [here](https://drive.google.com/file/d/1YteSJa9OO29YW7buzJ2LD2xjl-0BaiuB/view?usp=drive_link) and put it in `./checkpoints/`.
 Then you can test it by running the following command:
 
 ```bash
