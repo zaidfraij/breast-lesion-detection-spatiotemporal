@@ -23,6 +23,6 @@ python3 -u inference.py \
     --num_workers 12 \
     --data_coco_lite_path '../Miccai 2022 BUV Dataset' \
     --with_box_refine \
-    --resume './checkpoints/checkpoint0027.pth' \
+    --resume './checkpoints/spatiotemporal_stnet_resnet50_buv_weights.pt' \
     --eval \
     ${PY_ARGS}
