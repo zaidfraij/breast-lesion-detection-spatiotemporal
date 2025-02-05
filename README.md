@@ -3,7 +3,7 @@ The goal of this project is to develop, evaluate, and experiment with STNET as a
 
 Main Focus:
 
-    - Asses Retinanet's ability as a baseline for identifying and localizing breast lesions in ultrasound videos.
+    - Asses STNet's ability to use Spatial-Temporal information for identifying and localizing breast lesions in ultrasound videos.
     - Evaluate the model’s performance on publicly available datasets.
     
 ## Usage
