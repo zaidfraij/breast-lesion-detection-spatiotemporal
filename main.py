@@ -70,7 +70,7 @@ def get_args_parser():
 
     # * Backbone
     parser.add_argument('--backbone',
-                        default='retinanet_resnet50_fpn',
+                        default='resnet50',
                         type=str,
                         help="Name of the convolutional backbone to use")
     parser.add_argument(

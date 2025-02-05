@@ -90,19 +90,10 @@ class Backbone(BackboneBase):
                  return_interm_layers: bool, dilation: bool):
         norm_layer = FrozenBatchNorm2d
 
-        if 'retinanet' in name.lower():
-            model = getattr(torchvision.models.detection, name)(
-                pretrained=is_main_process(),
-                trainable_backbone_layers=5 if train_backbone else 0,
-                norm_layer=norm_layer
-            )
-            backbone = model.backbone
-            print(backbone)
-        else:
-            backbone = getattr(torchvision.models, name)(
-                replace_stride_with_dilation=[False, False, dilation],
-                pretrained=is_main_process(),
-                norm_layer=norm_layer)
+        backbone = getattr(torchvision.models, name)(
+            replace_stride_with_dilation=[False, False, dilation],
+            weights="DEFAULT" if is_main_process() else None,
+            norm_layer=norm_layer)
         assert name not in ('resnet18',
                             'resnet34'), "number of channels are hard coded"
         super().__init__(backbone, train_backbone, return_interm_layers)

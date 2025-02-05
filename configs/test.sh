@@ -8,6 +8,7 @@ PY_ARGS=${@:1}
 python3 -u inference.py \
     --output_dir ${EXP_DIR} \
     --data_mode '15frames' \
+    --self_attn \
     --num_global_frames 3 \
     --num_support_frames 2 \
     --num_frames 6 \
